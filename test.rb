@@ -73,26 +73,3 @@ module USDA
     end
   end
 end
-  
-results = USDA::ARMS.crops(1, "FARM", { fipsStateCode: "27" })
-selected = USDA::Selector.select_from_results({ "topic_header" => "Planted acres"}, results)
-ap selected.map { |e| e["estimate"] }
-# ap USDA::ARMS.crops(1, "FARM", { fipsStateCode: "27" })
-# ap USDA::ARMS.reports("CROP")
-# ap USDA::ARMS.subjects("CROP", 10)
-
-
-
-# base_uri = "http://api.data.gov/USDA/ERS/data/Arms/"
-# params = {  report:         1,
-#             subject:        1,
-#             series1:        'AGE',
-#             series2:        'FARM',
-#             size:           2,
-#             start:          0 }
-
-# api = USDA::API.new("Finance", params)
-# 
-# ap USDA::Reports.get_reports("CROP")
-# ap USDA::Reports.reports(1)
-# puts api.parsed_response
